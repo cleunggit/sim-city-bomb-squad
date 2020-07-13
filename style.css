@@ -4,3 +4,37 @@ body {
   padding: 0;
   text-align: center;
 }
+
+.unexploded {
+  background-image: url(/img/simcity.jpg);
+  background-size: 100vw 100vh;
+}
+
+.exploded {
+  background-image: url(/img/explosion.jpg);
+}
+
+.box {
+  background: black;
+  display: inline-block;
+  padding: 35px 25px 50px 25px;
+  margin-top: 55px;
+}
+
+.timer {
+  color: chartreuse;
+  font-size: 1.5em;
+}
+
+.wires {
+  
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 10px;
+  font-size: 1.5em;
+}
