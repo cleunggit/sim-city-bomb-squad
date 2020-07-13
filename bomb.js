@@ -70,6 +70,8 @@ const cutWire = (e) => {
     e.target.removeEventListener('click', cutWire)
     // determine if the wire is good
     if (e.target.getAttribute('data-cut') === 'true') {
+        document.getElementById('buzz').play()
+
         e.target.setAttribute('data-cut', 'false')
 
         if (checkWin()) {
@@ -104,6 +106,8 @@ const endGame = (message) => {
 
 const winGame = () => {
     endGame('BOMB DEFUSED')
+
+    document.getElementById('cheer').play()
 }
 
 const loseGame = () => {
@@ -112,6 +116,7 @@ const loseGame = () => {
     document.getElementsByTagName('body')[0].classList.remove('unexploded')
     document.getElementsByTagName('body')[0].classList.add('exploded')
 
+    document.getElementById('explode').play()
 }
 
 document.getElementById('start').addEventListener('click', initGame)
