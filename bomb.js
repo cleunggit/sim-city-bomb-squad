@@ -37,7 +37,7 @@ const tick = () => {
 // create a function to handle wire clicks
 const addWireClicks = () => {
     // get all the wire images
-    let wireImages = document.querySelectorAll('#box img')
+    let wireImages = document.querySelectorAll('.box img')
     // loop through each wire
     for (let i = 0; i < wireImages.length; i++) {
         // for each image, add the event listener when clicked and envoke the cutWire function
@@ -56,7 +56,7 @@ const addWireClicks = () => {
 
 // create a function to remove wire clicks
 const removeWireClicks = () => {
-    let wireImages = document.querySelectorAll('#box img')
+    let wireImages = document.querySelectorAll('.box img')
 
     for (let i = 0; i < wireImages.length; i++) {
         wireImages[i].removeEventListener('click', cutWire)
@@ -83,18 +83,20 @@ const cutWire = (e) => {
 
 
 const checkWin = () => {
-    let wireImages = document.querySelectorAll('#box img')
+    let wireImages = document.querySelectorAll('.box img')
 
     for (let i = 0; i < wireImages.length; i++) {
         if (wireImages[i].getAttribute('data-cut') === 'true') {
             return false
         }
     }
+    return true
 }
 
 const endGame = (message) => {
     clearInterval(interval)
 
+    document.getElementById('start').textContent = "play again"
     document.getElementById('message').textContent = message
 
     removeWireClicks()
